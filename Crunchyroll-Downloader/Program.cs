@@ -5,14 +5,14 @@ using System.Windows.Threading;
 
 namespace CrunchyrollDownloader
 {
-	public class Program
-	{
-		public string STState { get; set; }
-		public string Url { get; set; }
-		public string Langue { get; set; }
-		public string Format { get; set; }
-		public string SavePath { get; set; }
-		public string Quality { get; set; }
+    public class Program
+    {
+        public string STState { get; set; }
+        public string Url { get; set; }
+        public string Langue { get; set; }
+        public string Format { get; set; }
+        public string SavePath { get; set; }
+        public string Quality { get; set; }
         public string MkvStatus { get; set; }
         public string DlStatus { get; set; }
 
@@ -20,13 +20,13 @@ namespace CrunchyrollDownloader
         /// Downloadings a file.
         /// </summary>
         public void Downloading()
-		{
-			var dl_status = new Program();
-			var process = new Process();
-			// Configure the process using the StartInfo properties.
-			process.StartInfo.FileName = @"C:\ProgramData\Crunchy-DL\youtube-dl.exe";
-			process.StartInfo.WindowStyle = ProcessWindowStyle.Maximized;
-			// process.StartInfo.RedirectStandardOutput = true;
+        {
+            var dl_status = new Program();
+            var process = new Process();
+            // Configure the process using the StartInfo properties.
+            process.StartInfo.FileName = @"C:\ProgramData\Crunchy-DL\youtube-dl.exe";
+            process.StartInfo.WindowStyle = ProcessWindowStyle.Maximized;
+            // process.StartInfo.RedirectStandardOutput = true;
 
             if (MkvStatus == "1")
             {
@@ -63,7 +63,7 @@ namespace CrunchyrollDownloader
                 }
             }
 
-			
+
             var viewerThread = new Thread(() =>
             {
                 var download_window = new DownloadWindow();
@@ -82,5 +82,5 @@ namespace CrunchyrollDownloader
             MessageBox.Show("Download finished !", "Success !", MessageBoxButton.OK, MessageBoxImage.Information);
 
         }
-	}
+    }
 }
